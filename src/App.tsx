@@ -45,7 +45,15 @@ const [todos, setTodos] = useState<Todo[]>([]);
     });
 
     setTodos(newTodos);
+
+    const handleChecked = () => {
+
+    }
   };
+
+  function handleChecked(id: number, checked: Boolean): void {
+    throw new Error('Function not implemented.');
+  }
 
   return (
     <div className="App">
@@ -63,6 +71,7 @@ const [todos, setTodos] = useState<Todo[]>([]);
           {todos.map(todo => (
             <li key={todo.id}>
             <input type='text' onChange={(e) => handleEdit(todo.id, e.target.value)} className='inputText' value={todo.inputValue}/>
+            <input type='checkbox' onChange={(e) => handleChecked(todo.id, todo.checked)} />
             </li>
           ))}
         </ul>
